@@ -1,12 +1,4 @@
-type Blog = {
-  id: number;
-  pageURL: string;
-  tags: string;
-  user: string;
-  likes: number;
-  views: number;
-  comments: number;
-};
+import { Blog } from "./Blog";
 
 type BlogsCardProps = {
   blogs: Blog[];
@@ -23,7 +15,7 @@ const BlogsCard = ({ blogs }: BlogsCardProps) => {
               className="border border-sky-500 bg-black shadow-md rounded-lg overflow-hidden text-white"
             >
               <img
-                src={item.pageURL}
+                src={item.previewURL}
                 alt={item.tags}
                 className="w-full h-48 object-cover object-center"
               />

@@ -2,9 +2,9 @@ import { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
 import BlogsCard from "./BlogsCard";
 
-type Blog = {
+export type Blog = {
   id: number;
-  pageURL: string;
+  previewURL: string;
   tags: string;
   user: string;
   likes: number;
@@ -21,7 +21,7 @@ const App = () => {
       try {
         const response = await axios.get("https://pixabay.com/api/", {
           params: {
-            key: "42510441-508f83ffc832fe98b6e24e967",
+            key: import.meta.env.VITE_KEY,
             q: search,
           },
         });
